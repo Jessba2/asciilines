@@ -2,16 +2,25 @@
 //July 1st, 2019
 //asciilines.cpp
 
-#include <cstdlib>
-#include <cctype>
-#include <cstring>
-#include <iostream>
-#include <fstream>
+#include "asciilines.h"
 
 using namespace std;
 
 int main()
 {
-				cout<< "Hello World" <<endl;
-				return 0;
+				aTvg = new tvg;
+
+				int done = 0;
+				ifstream in;
+				in.open("myTest1.txt");
+
+				if(in)
+				{
+								in>>aTvg.rowsInCanvas;
+								while(in && !in.eof())
+								{
+												in.get(aTvg.columnsInCanvas);
+								}
+
+				{
 }
