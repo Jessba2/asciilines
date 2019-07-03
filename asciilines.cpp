@@ -6,23 +6,17 @@
 
 #include "asciilines.h"
 
-using namespace std;
 
 int main()
 {
-				aTvg = new tvg;
+				tvg aTvg;
+				aTvg.makeArray();  //readin, make array, initialize array
 
-				int done = 0;
-				ifstream in;
-				in.open("myTest1.txt");
+//initialize array
+//print array
+				aTvg.printArray();
+				return 0;
 
-				if(in)
-				{
-								in>>aTvg.rowsInCanvas;
-								while(in && !in.eof())
-								{
-												in.get(aTvg.columnsInCanvas);
-								}
-
-				{
 }
+
+

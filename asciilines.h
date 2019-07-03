@@ -8,17 +8,21 @@
 #include <iostream>
 #include <fstream>
 
+using namespace std;
 
 class tvg
 {
 				public:
+//				tvg();
 				void readin();
-				void output();
-
+				void makeArray();
+				void printArray();
 				private:
 				int rowsInCanvas;
 				int colsInCanvas;
+				int** myArray;
 };
+
 
 
 
