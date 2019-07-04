@@ -10,19 +10,33 @@
 
 using namespace std;
 
+class node
+{
+				public:
+								node(char tempAsciiChar, int tempStartRow, int tempStartCol, int tempHorV, int tempHowFar);
+
+								char asciiChar;
+								int startRow;
+								int startCol;
+								int hORv;
+								int howFar;
+								node* next;
+};
+
 class tvg
 {
 				public:
-//				tvg();
-				void readin();
-				void makeArray();
-				void printArray();
+								//				tvg();
+								void readIn();
+								void makeListOfInst();
+								void makeArray();
+								void printArray();
 				private:
-				int rowsInCanvas;
-				int colsInCanvas;
-				int** myArray;
+								int rowsInCanvas;
+								int colsInCanvas;
+								int** myArray;
+								node* head; //LLL of instructions
 };
-
 
 
 

@@ -10,10 +10,10 @@
 int main()
 {
 				tvg aTvg;
+				cerr<<"call readIn which builds LLL" <<endl;
+				aTvg.readIn(); //reads in data
+				cerr<<"call makeArray makes 3by4 with dots" <<endl;
 				aTvg.makeArray();  //readin, make array, initialize array
-
-//initialize array
-//print array
 				aTvg.printArray();
 				return 0;
 
