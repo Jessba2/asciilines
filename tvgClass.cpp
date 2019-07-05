@@ -22,33 +22,42 @@ void tvg::readIn()
 				char tempAsciiChar;
 				int tempStartRow;
 				int tempStartCol;
-				int tempHorV;
+				char tempHorV;
 				int tempHowFar;
 				ifstream in;
-				in.open("test1.txt");
+				in.open("test2.txt");
 				if(in)
 				{
 								in>>rowsInCanvas;
+								in.ignore(30, '|'); //eat pipe
 								cerr<<"rows =" <<rowsInCanvas<<endl;
 								in>>colsInCanvas;
-								in.ignore('\n'); //eat endline
+								in.ignore(30, '\n'); //eat endline
+								cerr<<"cols =" <<colsInCanvas<<endl;
 								in.get(tempAsciiChar);
 								cerr<<"asciiChar=" << tempAsciiChar <<endl;
 								while(in && !in.eof())
 								{
+
+								in.ignore(30, '|'); //eat pipe
 												in>>tempStartRow;
 												cerr<<"tempStartRow = "<<tempStartRow<<endl;
+
+								in.ignore(30, '|'); //eat pipe
 												in>>tempStartCol;
+
+								in.ignore(30, '|'); //eat pipe
 												cerr<<"tempStartCol = "<<tempStartCol <<endl;
-												in>>tempHorV;
-												cerr<<"tempHorV = "<<tempHorV <<endl;
+												in.get(tempHorV);
+								in.ignore(30, '|'); //eat pipe
+												cout <<"tempHorV = "<<tempHorV <<endl;
 												in>>tempHowFar;
+												in.ignore(5, '\n'); //eat endline
 												cerr<<"tempHowFar = "<<tempHowFar <<endl;
-												in.ignore('\n'); //eat endline
 												node* temp = head; //hold on to rest of list (null to start)
 												head = new node(tempAsciiChar, tempStartRow, tempStartCol, tempHorV, tempHowFar); //make and insert node
 												head->next = temp;
-												in>>tempAsciiChar;
+												in.get(tempAsciiChar);
 								cerr<<"asciiChar=" << tempAsciiChar <<endl;
 								}
 in.close();
@@ -89,7 +98,7 @@ void tvg::printArray()
 
 
 
-node::node(char tempAsciiChar, int tempStartRow, int tempStartCol, int tempHorV, int tempHowFar)
+node::node(char tempAsciiChar, int tempStartRow, int tempStartCol, char tempHorV, int tempHowFar)
 {
 
 				asciiChar = tempAsciiChar;

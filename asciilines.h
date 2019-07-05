@@ -13,12 +13,12 @@ using namespace std;
 class node
 {
 				public:
-								node(char tempAsciiChar, int tempStartRow, int tempStartCol, int tempHorV, int tempHowFar);
+								node(char tempAsciiChar, int tempStartRow, int tempStartCol, char tempHorV, int tempHowFar);
 
 								char asciiChar;
 								int startRow;
 								int startCol;
-								int hORv;
+								char hORv;
 								int howFar;
 								node* next;
 };
